@@ -1,0 +1,16 @@
+<body>
+    <form novalidate (submit)="SignUp(frm)" #frm="ngForm" class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>הרשמה</mat-label>
+          <input matInput placeholder="הכנס מספר טלפון" >
+          <input matInput placeholder="שם פרטי" >
+          <input matInput placeholder="שם משפחה">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Leave a comment</mat-label>
+          <button (click)="selectShop()" >הרשמה </button>
+        </mat-form-field>
+      </form>
+      
+    </body>

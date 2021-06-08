@@ -1,0 +1,8 @@
+<form novalidate (submit)="enter(frm)" #frm="ngForm">
+    <div>
+    <p>כניסה</p>
+    <input matInput placeholder="הכנס מספר טלפון" [(ngModel)] = "logIn.phonNumber" name="phonNumber" />
+    <button type="submit" >כניסה</button>
+</div>
+<div></div>
+</form>
