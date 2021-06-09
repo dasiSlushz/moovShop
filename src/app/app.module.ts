@@ -16,6 +16,8 @@ import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import {MatInputModule} from '@angular/material/input';
     ChartsModule,
     NgbModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

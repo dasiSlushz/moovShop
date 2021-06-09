@@ -1,1 +1,6 @@
-<p>all-products works!</p>
+
+ <!--<div *ngFor="let item of products">
+    <app-products type="button" value="{{item.NameProduct}}"></app-products>
+</div>!-->
+<div>ככככ </div>
+<app-products *ngFor="let item of products" [product]="item" (addCar) = "fillShoppingCart($event)"></app-products>

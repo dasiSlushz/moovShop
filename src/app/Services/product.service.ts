@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Platoon } from '../Models/platoon.model';
 import { Product } from '../Models/product.model';
 
 @Injectable({
@@ -9,9 +10,9 @@ import { Product } from '../Models/product.model';
 export class ProductService {
   url  = "https://localhost:44304/api/product";
   constructor(private http:HttpClient) { }
-  GetPlatoonsByShop(codeShop:number):Observable<Product[]>
+  GetProductsByPlatoons(platoons:Platoon[]):Observable<Product[]>
   {
-    return this.http.get<Product[]>(`${this.url}/getPlatoonForshop/${codeShop}`);
+    return this.http.get<Product[]>(`${this.url}/getProductsForshop/${platoons}`);
   }
   AddNewProduct(product:Product):Observable<number>
   {

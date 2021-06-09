@@ -7,7 +7,7 @@ import { Platoon } from '../Models/platoon.model';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class PlatoonService {
     url  = "https://localhost:44304/api/platoon";
     constructor(private http:HttpClient) { }
     GetPlatoonsByShop(codeShop:number):Observable<Platoon[]>
