@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   enter(frm:any){
+   
     this.clientService.Login(this.logIn.phonNumber).subscribe(CodeClient=>
       {
       if(CodeClient!=0)
