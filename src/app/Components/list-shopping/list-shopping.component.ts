@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Product } from 'src/app/Models/product.model';
+import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
   selector: 'app-list-shopping',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListShoppingComponent implements OnInit {
 
-  constructor() { }
+ constructor(){
+ }
 
-  ngOnInit(): void {
+  ngOnInit()
+  {
   }
 
+  
 }

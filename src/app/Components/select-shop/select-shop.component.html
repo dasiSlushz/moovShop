@@ -1,1 +1,43 @@
-<p>select-shop works!</p>
+<google-map (centerChanged)="(center_changed())" height="500px"
+width="100%"
+[zoom]="zoom"
+[center]="center"
+[options]="options">  
+<map-marker
+#markerElem
+*ngFor="let marker of markers; index as i"
+[position]="marker.position"
+[label]="marker.label"
+[title]="marker.title"
+[options]="marker.options"
+
+>
+<map-marker (mapClick)="pspotinfo(i)"> </map-marker>
+ </map-marker>
+ 
+</google-map>
+<button (click)="logCenter()">Log center</button>
+<button (click)="addMarker()">Add marker</button>
+
+
+<p>Click the button to get your coordinates.</p>
+
+<button (click)="getLocation(demo)">Try It</button>
+
+<p #demo></p>
+
+<script>
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>

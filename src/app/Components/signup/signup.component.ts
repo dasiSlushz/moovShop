@@ -5,12 +5,13 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-client',
-  templateUrl: './client.component.html',
-  styleUrls: ['./client.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class ClientComponent{
-  constructor(private ClientService:ClientService , private router:Router,) {  }
+export class SignupComponent implements OnInit {
+
+  constructor(private ClientService:ClientService , private router:Router) {  }
  newClient:Client = new Client();
   ngOnInit(): void {
   }
@@ -19,17 +20,13 @@ export class ClientComponent{
     this.ClientService.SignUp(this.newClient).subscribe(CodeClient => {this.newClient.CodeClient =CodeClient;
     sessionStorage.setItem('CodeClient',CodeClient.toString());
 })
-
-
- 
   }
-  /*
+
   selectShop()
   {
     console.log('1111');
-    this.router.navigate(['/select-shop']);
+    this.router.navigate(['select-shop',this.newClient.CodeClient]);
     console.log('2222');
   }
   
-  */
 }

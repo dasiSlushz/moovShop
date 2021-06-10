@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions, plugins ,LinearTickOptions} from 'chart.js';
 import { Color } from 'ng2-charts';
 
@@ -10,6 +10,10 @@ import { Color } from 'ng2-charts';
 })
 export class ShoppingComponent  {
   constructor() { }
+  /*
+  @ViewChild('canvas', { static: true })
+ // canvas= new ElementRef<HTMLCanvasElement>();  
+
   lineChartData: ChartDataSets[] = [
     //Y
     { data:[{x: 10, y: 20},{x: 50, y: 60}, {x: 15, y: 20}, {x: 40, y: 50},{x: 20, y: 5},{x: 20, y: 5},{x: 20, y: 5},], label: 'Crude oil prices', fill: false,
@@ -41,4 +45,30 @@ export class ShoppingComponent  {
             text: (ctx) => 'Step ' + ctx.chart.data.datasets[0][0].stepped + ' Interpolation',
           }}}]   
   lineChartType = 'line';
+
+
+
+  
+
+
+  
+  
+  private ctx: CanvasRenderingContext2D;
+x:number;
+ y:number;
+ width:number;
+ height:number; 
+  ngOnInit(): void {
+    this.ctx = this.canvas.nativeElement.getContext('2d');
+    this.ctx.beginPath();
+    this.ctx.moveTo(0, 1000);
+    this.ctx.lineTo(100, 10);
+    this.ctx.lineTo(20, 10);
+    this.ctx.closePath();
+    this.ctx.stroke();
+  }
+  //draw(g:list) {
+    //this.ctx.fillRect(z * x, z * y, z, z);
+  }
+  */
 }

@@ -1,0 +1,6 @@
+#image {background-image: url(milk.jpg);   background-repeat: no-repeat;   background-position: 100% 100%;width: 100px;height: 100px;  }
+#product{ display: flex; flex-direction: column;}
+section {
+    display: table;
+  }
+  

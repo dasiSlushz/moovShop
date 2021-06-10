@@ -9,6 +9,10 @@ import { Client } from '../Models/client.model';
 export class ClientService {
   url  = "https://localhost:44304/api/client";
   constructor(private http:HttpClient) { }
+  Login(phonNumber:string):Observable<number>
+  {
+   return this.http.get<number>(`${this.url}/login/${phonNumber}`)
+  }
   SignUp(newClient: Client):Observable<number>
   {
     return this.http.post<number>(`${this.url}/insertclient` ,newClient);
